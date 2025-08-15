@@ -1,6 +1,6 @@
 package com.itproger;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -34,10 +34,7 @@ public class Main {
 
                              */
 
-        /**
-         *
-         *
-         */
+
 //        String str = "a";
 //        String str2 = str + 1;
 //        System.out.println(str2);
@@ -114,9 +111,9 @@ public class Main {
     int start = 0;
     int end = start+1;
     byte bt =(byte)(127+1);
-    int ig =2147483647+10;
-    byte br = (byte)ig;
-    System.out.println(br);
+   // int ig =2147483647+10;
+   // byte br = (byte)ig;
+   // System.out.println(br);
     //закінчили на ст 52;
        task14();
 
