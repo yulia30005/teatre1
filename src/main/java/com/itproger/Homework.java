@@ -378,4 +378,45 @@ public class Homework {
         System.out.println("Індекс маси тіла:: " + bmi);
 
     }
+    public static void triangle() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть першу сторону трикутника: ");
+        int first = sc.nextInt();
+        System.out.println("Введіть другу сторону трикутника: ");
+        int second = sc.nextInt();
+        System.out.println("Введіть третю сторону трикутника: ");
+        int third = sc.nextInt();
+        if(first + second > third || first + third > second || second + third > first) {
+            int perimeter = first + second + third;
+            System.out.println("Периметр трикутника = " + perimeter);
+        }else {
+            System.out.println("Введення недійсне");
+        }
+    }
+    public static void division() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть число: ");
+        int number = sc.nextInt();
+        if (number % 5 == 0 && number % 4 == 0) {
+            System.out.println("Ділиться на 4 і 5");
+        } else if (number % 4 == 0 || number % 5 == 0) {
+            System.out.println("Ділиться на 4 або 5");
+        }
+        if (number % 4 == 0 && number % 5 != 0) {
+            System.out.println("Ділиться тільки на 4");
+        } else if (number % 5 == 0 && number % 4 != 0) {
+            System.out.println("Ділиться тільки на 5");
+
+        }
+    }
+    public static void steamy(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть число: ");
+        int number = sc.nextInt();
+        if (number % 2 == 0 ) {
+            System.out.println("Це число парне");
+        }else {
+            System.out.println("Це число непарне");
+    }
+
 }
