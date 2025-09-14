@@ -1,5 +1,7 @@
 package com.itproger;
 
+import java.time.Month;
+import java.time.YearMonth;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -280,7 +282,7 @@ public class Homework {
         double a = sc.nextDouble(), b = sc.nextDouble(), c = sc.nextDouble();
         double sqrt = Math.pow(b, 2);
         double discriminant = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
-        short dis = (short)Math.sqrt(4);
+        short dis = (short) Math.sqrt(4);
         if (discriminant > 0) {
             System.out.println((-b - discriminant) / (2 * a) + " перший корінь");
             System.out.println((-b + discriminant) / (2 * a) + " другий корінь");
@@ -293,7 +295,7 @@ public class Homework {
         }
     }
 
-    public static void task16(){
+    public static void task16() {
         Random rdm = new Random();
         rdm.nextInt(12);
         switch (rdm.nextInt(12)) {
@@ -343,7 +345,7 @@ public class Homework {
         int i = sc.nextInt();
         System.out.println("Введіть кількість днів після сьогодні");
         int j = sc.nextInt();
-        switch ((i+j)%7) {
+        switch ((i + j) % 7) {
             case 0:
                 System.out.println("Неділя");
                 break;
@@ -368,7 +370,7 @@ public class Homework {
         }
     }
 
-    public static void task18(){
+    public static void task18() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть вагу  кілограмах: ");
         double weight = sc.nextDouble();
@@ -378,6 +380,7 @@ public class Homework {
         System.out.println("Індекс маси тіла:: " + bmi);
 
     }
+
     public static void triangle() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть першу сторону трикутника: ");
@@ -386,37 +389,122 @@ public class Homework {
         int second = sc.nextInt();
         System.out.println("Введіть третю сторону трикутника: ");
         int third = sc.nextInt();
-        if(first + second > third || first + third > second || second + third > first) {
+        if (first + second > third && first + third > second && second + third > first) {
             int perimeter = first + second + third;
             System.out.println("Периметр трикутника = " + perimeter);
-        }else {
+        } else {
             System.out.println("Введення недійсне");
         }
     }
+
     public static void division() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть число: ");
         int number = sc.nextInt();
+//        if (number % 5 == 0 && number % 4 == 0) {
+//            System.out.println("Ділиться на 4 і 5");
+//        } else if (number % 4 == 0 || number % 5 == 0) {
+//            System.out.println("Ділиться на 4 або 5");
+//        } elif (number % 4 == 0 && number % 5 != 0) {
+//            System.out.println("Ділиться тільки на 4");
+//        } else if (number % 5 == 0 && number % 4 != 0) {
+//            System.out.println("Ділиться тільки на 5");
+//        }
         if (number % 5 == 0 && number % 4 == 0) {
             System.out.println("Ділиться на 4 і 5");
-        } else if (number % 4 == 0 || number % 5 == 0) {
+        } else if (number % 4 == 0) {
             System.out.println("Ділиться на 4 або 5");
-        }
-        if (number % 4 == 0 && number % 5 != 0) {
             System.out.println("Ділиться тільки на 4");
-        } else if (number % 5 == 0 && number % 4 != 0) {
+        } else if (number % 5 == 0) {
+            System.out.println("Ділиться на 4 або 5");
             System.out.println("Ділиться тільки на 5");
 
-        }
+        } else System.out.println("Не ділиться на 4 або 5");
+
     }
-    public static void steamy(){
+
+    public static void steamy() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть число: ");
         int number = sc.nextInt();
-        if (number % 2 == 0 ) {
+        if (number % 2 == 0) {
             System.out.println("Це число парне");
-        }else {
+        } else {
             System.out.println("Це число непарне");
+        }
+    }
+
+    public static void letter() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть літеру: ");
+        char letter = sc.next().charAt(0);
+        if (Character.isLetter(letter) == false) {
+            System.out.println("Не літера");
+        } if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+            System.out.println("Літера голосна");
+        }else if (Character.isLetter(letter) == true){
+            System.out.println("Літера приголосна");
+        }
+    }
+
+    public static void phone () {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ведіть літеру: ");
+        char letter = sc.next().charAt(0);
+        if (Character.isLetter(letter) == false) {
+            System.out.println("Не літера");
+        }if (letter == 'a' || letter == 'b' || letter == 'c') {
+            System.out.println( "Число: 2");
+        } if (letter == 'd' || letter == 'e' || letter == 'f') {
+            System.out.println( "Число: 3");
+        } if (letter == 'g' || letter == 'h' || letter == 'i') {
+            System.out.println( "Число: 4");
+        } if (letter == 'j' || letter == 'k' || letter == 'l') {
+            System.out.println( "Число: 5");
+        } if (letter == 'm' || letter == 'n' || letter == 'o') {
+            System.out.println( "Число: 6");
+        } if (letter == 'p' || letter == 'q' || letter == 'r' || letter == 's') {
+            System.out.println( "Число: 7");
+        } if (letter == 't' || letter == 'u' || letter == 'v') {
+            System.out.println( "Число: 8");
+        } if (letter == 'w' || letter == 'x' || letter == 'y' || letter == 'z') {
+            System.out.println( "Число: 9");
+        }
+    }
+
+    public static void random () {
+        char[] allLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+        double randomValue = Math.random();
+        int randomIndex = (int) (randomValue * allLetter.length);
+        char randomLetter = allLetter[randomIndex];
+         randomLetter = Character.toLowerCase(randomLetter);
+        System.out.println("Случайная буква: " + randomLetter);
+
+    }
+
+    public static void days(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть рік: ");
+        int year = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Введіть місяць: ");
+        String month = sc.nextLine(); // Проблемка
+        if (Character.isUpperCase(month.charAt(0)) == false) {
+            System.out.println("Не коректна назва");
+        }if (month == "Jan"){
+
+        }
+
+    }
+
+    public static void line(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть рядок: ");
+        String line = sc.nextLine();
+        int number = line.length();
+        char letter = line.charAt(number -1);
+        System.out.println("Довжина: " + number + "\nОстанній символ: " + letter);
+
     }
 
 }

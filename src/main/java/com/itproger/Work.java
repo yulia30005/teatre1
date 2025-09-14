@@ -52,13 +52,14 @@ public class Work {
 //        }else{
 //            y+=1;
 //        }
-        boolean i = true;
-        int y;
-        if (i) y = 1;
-        else y = 0;
-        y = (i) ? 1 : 0; //тернарний оператор
-        Random rdm = new Random();
-        rdm.nextInt(3);
+//        boolean i = true;
+//        int y;
+//        if (i) y = 1;
+//        else y = 0;
+//        y = (i) ? 1 : 0; //тернарний оператор
+//        Random rdm = new Random();
+//        rdm.nextInt(3);
+        leson();
     }
 
 
@@ -117,5 +118,64 @@ public class Work {
             case 11:
                 System.out.println("sheep");
         }
+    }
+
+    public static void palindrom() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть трьох значне число:");
+        int number = sc.nextInt();
+        int first = number / 100;
+        int last = number % 10;
+        if (first == last) {
+            System.out.println("Є паліндромом");
+        } else {
+            System.out.println("Не є паліндромом");
+        }
+
+    }
+
+    //3.17
+    public static void game() {
+        int computer = (int) (Math.random() * 3);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть 1(камінь), 2(папір), 0(ножиці) ");
+        int user = sc.nextInt();
+        if (user == computer) {
+            System.out.println("Нічья");
+        } else if ((user == 0 && computer == 2) || (user == 1 && computer == 0) || (user == 2 && computer == 1)) {
+            System.out.println("You win");
+        } else {
+            System.out.println("You lose");
+        }
+    }
+    public static void leson(){
+//        char a ='a';
+//        char b = 97;
+//        char c = '\u0061';
+//        b= (char)(b+1);
+//        int d =a;
+//        double db = 100.56;
+//        c =(char) db;
+//        System.out.println(a<b);
+//        System.out.println(a + " "+ b + " " + c );
+//        System.out.println("\tShe}said : \"jghvjhb\"");
+//       char upper = 'A';
+//        System.out.println(Character.isLetter(upper));
+//    //   char lower = Character.toLowerCase(upper);// переводить в малу букву
+//        char lower =(char)(upper+32);
+//        System.out.println(lower);
+        String st = "        ghfuj     ";
+        String r = null;
+//       st+="JVhgv    a     " + r;
+//        System.out.println(st);
+//       st= st.concat(r);
+        System.out.println(st);
+      st = st.toUpperCase();
+        System.out.println(st);
+        System.out.println( st.length());
+        System.out.println(st.charAt(14));
+        st= st.trim();
+        System.out.println(st);
+        //ст25 порівняння рядків
     }
 }

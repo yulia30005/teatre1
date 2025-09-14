@@ -11,7 +11,8 @@ public class Main {
 //        Homework.task17();
 //        Work.palindrom();
 //        Work.game();
-        Homework.division();
+ //       Homework.division();
+        Homework.days();
 
 
     }
