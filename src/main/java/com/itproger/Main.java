@@ -12,7 +12,7 @@ public class Main {
 //        Work.palindrom();
 //        Work.game();
  //       Homework.division();
-        Homework.days();
+        Homework.auto();
 
 
     }

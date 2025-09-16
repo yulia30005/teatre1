@@ -1,5 +1,6 @@
 package com.itproger;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -59,7 +60,7 @@ public class Work {
 //        y = (i) ? 1 : 0; //тернарний оператор
 //        Random rdm = new Random();
 //        rdm.nextInt(3);
-        leson();
+        lesson2();
     }
 
 
@@ -164,18 +165,45 @@ public class Work {
 //    //   char lower = Character.toLowerCase(upper);// переводить в малу букву
 //        char lower =(char)(upper+32);
 //        System.out.println(lower);
-        String st = "        ghfuj     ";
-        String r = null;
+//        String st = "        ghfuj     ";
+//        String r = null;
 //       st+="JVhgv    a     " + r;
 //        System.out.println(st);
-//       st= st.concat(r);
-        System.out.println(st);
-      st = st.toUpperCase();
-        System.out.println(st);
-        System.out.println( st.length());
-        System.out.println(st.charAt(14));
-        st= st.trim();
-        System.out.println(st);
+////       st= st.concat(r);
+//        System.out.println(st);
+//      st = st.toUpperCase();
+//        System.out.println(st);
+//        System.out.println( st.length());
+//        System.out.println(st.charAt(14));
+//        st= st.trim();
+//        System.out.println(st);
         //ст25 порівняння рядків
+
     }
+    public  static void lesson2(){
+        String a = "Abc";
+        String b = "Abc";
+        String c = new String("AbC");
+        System.out.println(a==b);
+        System.out.println(a==c);
+        System.out.println("Equals");
+        System.out.println(a.equals(c));
+        System.out.println(a.equalsIgnoreCase("ABC"));
+        System.out.println();
+        System.out.println("Compare");
+        System.out.println(a.compareTo(b));
+        System.out.println();
+        System.out.println("Compare".startsWith("Com"));
+        System.out.println(a.endsWith("bc"));
+        System.out.println("CompaRE".contains("omp"));
+        System.out.println("Compare".substring(2,4));
+        System.out.println("Comparep".lastIndexOf('p'));
+        String number = "100";
+        int number1 = Integer.parseInt(number);
+        byte bt = Byte.parseByte(number);
+        double d = Double.parseDouble(number);
+        System.out.println(d);
+        String newNumber = Double.toString(d);
+    }
+    //30ст
 }

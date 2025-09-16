@@ -1,5 +1,6 @@
 package com.itproger;
 
+import java.sql.SQLOutput;
 import java.time.Month;
 import java.time.YearMonth;
 import java.util.Random;
@@ -433,45 +434,57 @@ public class Homework {
             System.out.println("Це число непарне");
         }
     }
-
+        //4.13
     public static void letter() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть літеру: ");
         char letter = sc.next().charAt(0);
+        letter = Character.toLowerCase(letter);
         if (Character.isLetter(letter) == false) {
             System.out.println("Не літера");
-        } if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+        } else if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
             System.out.println("Літера голосна");
-        }else if (Character.isLetter(letter) == true){
+        }else {
             System.out.println("Літера приголосна");
         }
     }
-
-    public static void phone () {
+    //4.15
+    public static void phone () {//write from switch, велику букви,
         Scanner sc = new Scanner(System.in);
         System.out.println("Ведіть літеру: ");
         char letter = sc.next().charAt(0);
+        letter = Character.toLowerCase(letter);
         if (Character.isLetter(letter) == false) {
             System.out.println("Не літера");
-        }if (letter == 'a' || letter == 'b' || letter == 'c') {
-            System.out.println( "Число: 2");
-        } if (letter == 'd' || letter == 'e' || letter == 'f') {
-            System.out.println( "Число: 3");
-        } if (letter == 'g' || letter == 'h' || letter == 'i') {
-            System.out.println( "Число: 4");
-        } if (letter == 'j' || letter == 'k' || letter == 'l') {
-            System.out.println( "Число: 5");
-        } if (letter == 'm' || letter == 'n' || letter == 'o') {
-            System.out.println( "Число: 6");
-        } if (letter == 'p' || letter == 'q' || letter == 'r' || letter == 's') {
-            System.out.println( "Число: 7");
-        } if (letter == 't' || letter == 'u' || letter == 'v') {
-            System.out.println( "Число: 8");
-        } if (letter == 'w' || letter == 'x' || letter == 'y' || letter == 'z') {
-            System.out.println( "Число: 9");
+        } else switch (letter){
+            case 'a': case 'b': case 'c':
+                System.out.println( "Число: 2");
+                break;
+            case 'd': case 'e': case 'f':
+                System.out.println( "Число: 3");
+               break;
+            case 'g': case 'h': case 'i':
+                System.out.println( "Число: 4");
+                break;
+            case 'j': case 'k': case 'l':
+                System.out.println( "Число: 5");
+                break;
+            case 'm': case 'n': case 'o':
+                System.out.println( "Число: 6");
+                break;
+            case 'p': case 'q': case 'r': case 's':
+                System.out.println( "Число: 7");
+                break;
+            case 't': case 'u': case 'v':
+                System.out.println( "Число: 8");
+                break;
+            case 'w': case 'x': case 'y': case 'z':
+                System.out.println( "Число: 9");
+                break;
         }
     }
 
+   // 4.16
     public static void random () {
         char[] allLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
         double randomValue = Math.random();
@@ -491,19 +504,83 @@ public class Homework {
         String month = sc.nextLine(); // Проблемка
         if (Character.isUpperCase(month.charAt(0)) == false) {
             System.out.println("Не коректна назва");
-        }if (month == "Jan"){
-
+        } else if (month == "Jan"|| month == "March" || month == "May" || month == "Jul" || month == "Aug" || month == "Oct" || month == "Dec") {
+            System.out.println("31 days");;
+        } else if (month == "Apr"|| month == "Sep"|| month == "Nov" || month == "Jun") {
+            System.out.println("30 days");;
+        } else if (month == "Feb"  || year % 4 == 0 || year % 400 == 0 && year % 100 == 0) {
+            System.out.println("29 days");;
+        } else {
+            System.out.println("28 days");
+            ;
         }
 
     }
 
-    public static void line(){
-        Scanner sc = new Scanner(System.in);
+    public static void line1(){
+        Scanner sc1 = new Scanner(System.in);
         System.out.println("Введіть рядок: ");
-        String line = sc.nextLine();
-        int number = line.length();
-        char letter = line.charAt(number -1);
+        String lines = sc1.nextLine();
+        int number = lines.length();
+        char letter = lines.charAt(number -1);
         System.out.println("Довжина: " + number + "\nОстанній символ: " + letter);
+
+    }
+
+    public static void socialNumber(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть номер соціального страхування у форматі DDD-DD-DDDD: ");
+        String number = sc.nextLine();
+        if (number.charAt(3) != '-' || number.charAt(6) != '-' ) {
+            System.out.println("Вірний номер соціального страхування");
+        } else {
+            System.out.println("Невірний номер соціального страхування");
+        }
+    }
+
+    public static void work(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введіть ім'я працівника: ");
+        String name = sc.nextLine();
+        System.out.println("Введіть кількість відпрацьованих годин за тиждень: ");
+        int workedHours = sc.nextInt();
+        System.out.println("Введіть погодинну ставку: ");
+        double hourlyRate = sc.nextDouble();
+        System.out.println("Введіть ставку утримання федерального податку: ");
+        double federalRate = sc.nextDouble();
+        System.out.println("Введіть ставку утримання державного податку: ");
+        double stateRate = sc.nextDouble();
+        double grossPay = workedHours * hourlyRate;
+        double federalPay = grossPay * federalRate;
+        double statePay = grossPay * stateRate;
+        double pay = grossPay - (federalPay + statePay);
+        System.out.println("Ім'я робітника: " + name);
+        System.out.println("Відпрацьованих годин: " + workedHours);
+        System.out.println("Погодинна ставка: " + hourlyRate);
+        System.out.println("Брутто заробітна плата: " + grossPay);
+        System.out.println("Дедукція: ");
+        System.out.println("\t Федеральне утримання: " + federalPay);
+        System.out.println("\t Державне утримання: " + statePay);
+        System.out.println("\t Всього утримано: " + statePay + federalPay);
+        System.out.println("До отримання: "  + pay);
+
+    }
+
+    public static void auto(){
+        char[] allLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+        double randomValue = Math.random();
+        int randomIndex = (int) (randomValue * allLetter.length);
+        char randomLetter = allLetter[randomIndex];
+        char randomLetter2 = allLetter[randomIndex];
+        char randomLetter3 = allLetter[randomIndex];
+        char[] allNumber = "1234567890".toCharArray();
+        int randomIndexNumber = (int) (randomValue * allNumber.length);
+        char randomNumber1 = allNumber[randomIndexNumber];
+        char randomNumber2 = allNumber[randomIndexNumber];
+        char randomNumber3 = allNumber[randomIndexNumber];
+        char randomNumber4 = allNumber[randomIndexNumber];
+        String number = String.valueOf(randomLetter) + String.valueOf(randomLetter2) + String.valueOf(randomLetter3) + String.valueOf(randomNumber1) + String.valueOf(randomNumber2) + String.valueOf(randomNumber3) + String.valueOf(randomNumber4);
+        System.out.println("Номерний знак: " + number);
 
     }
 
